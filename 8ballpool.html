@@ -244,6 +244,15 @@ margin-bottom: 0;
 </div>
 </div>
 <script>
+// STATS-FETCHER-START
+fetch('https://www.chromebooker.com/stats/visitors.php', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify({ page: window.location.href })
+});
+// STATS-FETCHER-END
 window.addEventListener('load', () => {
 const canvas = document.getElementById('pool-canvas');
 const ctx = canvas.getContext('2d');
